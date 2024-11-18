@@ -22,8 +22,17 @@
 	
 		function sprawdz()
 		{
-			
-			
+			var imie = document.getElementById("imie").value;
+			var wiek = document.getElementById("wiek").value;
+
+			if(wiek<16){
+				wynik = "Witaj "+imie+", niestety nie możesz wziąść udziału w seansie, ponieważ masz za mało lat.";
+			}else if(wiek>=16 && wiek<18){
+				wynik = "Witaj "+imie+", możesz wziaść udział w seansie ale tylko i wyłącznie z opiekunem. Cena biletu wynosi 12zł.";
+			}else if(wiek>=18){
+				wynik = "Witaj "+imie+", możesz wziąść udział w seansie. Cena biletu wynosi 18zł.";
+			}
+			document.getElementById("wynik").innerHTML = wynik;
 		}
 
 	</script>

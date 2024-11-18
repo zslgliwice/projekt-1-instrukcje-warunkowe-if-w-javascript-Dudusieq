@@ -23,11 +23,64 @@
 	
 		function matematyka()
 		{
-			var a = document.getElementById('a').value;
-			var b = document.getElementById('b').value;
-			var c = document.getElementById('c').value;
+			var a = parseFloat(document.getElementById('a').value);
+			var b = parseFloat(document.getElementById('b').value);
+			var c = parseFloat(document.getElementById('c').value);	
+
+			if(a<=b && a<=c){
+				nm = a;
+			}else if(b<=a && b<=c){
+				nm = b;
+			}else{
+				nm = c;
+			}
+
+			if(a>=b && a>=c){
+				nw = a;
+			}else if(b>=a && b>=c){
+				nw = b;
+			}else{
+				nw = c;
+			}
 			
-			
+			if(a>0){
+				a1 = "a = "+a*(-1)+"<br>";
+			}else if (a<0){
+				a1 = "a = "+a*(-1)+"<br>";
+			}else{
+				a1 = "a = "+a+"<br>";
+			}
+
+			if(b>0){
+				b1 = "b = "+b*(-1)+"<br>";
+			}else if (a<0){
+				b1 = "b = "+b*(-1)+"<br>";
+			}else{
+				b1 = "b = "+b+"<br>";
+			}
+
+			if(c>0){
+				c1 = "c = "+c*(-1)+"<br>";
+			}else if (a<0){
+				c1 = "c = "+c*(-1)+"<br>";
+			}else{
+				c1 = "c = "+c+"<br>";
+			}
+
+
+
+			ParzA = (a % 2 == 0) ? a = "Liczba a jest parzysta<br>" : a = "Liczba a jest nie parzysta<br>";
+			ParzB = (b % 2 == 0) ? b = "Liczba b jest parzysta<br>" : b = "Liczba b jest nie parzysta<br>";
+			ParzC = (c % 2 == 0) ? c = "Liczba c jest parzysta<br>" : c = "Liczba c jest nie parzysta<br>";
+
+
+			document.getElementById("wynik").innerHTML = `
+				<p>a) Najmniejsza liczba: ${nm}</p>
+				<p>b) Największa liczba: ${nw}</p>
+				<p>c) Wartości bezwzględne:<br>${a1}${b1}${c1}</p>
+				<p>d) Parzystość:<br>${ParzA}${ParzB}${ParzC}</p>
+			`;
+
 		}
 
 	</script>
